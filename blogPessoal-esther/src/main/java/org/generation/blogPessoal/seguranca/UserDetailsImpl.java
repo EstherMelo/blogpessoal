@@ -5,10 +5,9 @@ import java.util.List;
 
 import org.generation.blogPessoal.model.Usuario;
 import org.springframework.security.core.GrantedAuthority;
-
 import org.springframework.security.core.userdetails.UserDetails;
 
-public class UserDetailsImpl implements UserDetails {
+public class UserDetailsImpl implements UserDetails{
 	private static final long serialVersionUID = 1L;
 
 	private String userName;
@@ -57,4 +56,4 @@ public class UserDetailsImpl implements UserDetails {
 	public boolean isEnabled() {
 		return true;
 	}
-}
+} 

@@ -5,7 +5,6 @@ import java.util.Optional;
 
 import org.apache.commons.codec.binary.Base64;
 import org.generation.blogPessoal.model.UserLogin;
-//meus pacotes
 import org.generation.blogPessoal.model.Usuario;
 import org.generation.blogPessoal.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +13,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class UsuarioService {
-	
+
 	@Autowired
 	private UsuarioRepository repository;
 
@@ -39,12 +38,11 @@ public class UsuarioService {
 				byte[] encodedAuth = Base64.encodeBase64(auth.getBytes(Charset.forName("US-ASCII")));
 				String authHeader = "Basic " + new String(encodedAuth);
 
-				user.get().setToken(authHeader);				
+				user.get().setToken(authHeader);
 				user.get().setNome(usuario.get().getNome());
 				user.get().setSenha(usuario.get().getSenha());
 
 				return user;
-
 			}
 		}
 		return null;
